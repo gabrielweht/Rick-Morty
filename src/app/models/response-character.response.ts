@@ -3,14 +3,14 @@ export interface ResponseCharacters {
   results: Characters[];
 }
 
-export interface Info {
+  interface Info {
   count: number;
   pages: number;
   next:  string;
   prev:  null;
 }
 
-export interface Characters {
+  interface Characters {
   id:       number;
   name:     string;
   status:   Status;
@@ -25,18 +25,18 @@ export interface Characters {
   created:  Date;
 }
 
-export enum Gender {
+  enum Gender {
   Female = "Female",
   Male = "Male",
   Unknown = "unknown",
 }
 
-export interface Location {
+  interface Location {
   name: string;
   url:  string;
 }
 
-export enum Species {
+  enum Species {
   Alien = "Alien",
   Human = "Human",
 }
@@ -46,3 +46,20 @@ export enum Status {
   Dead = "Dead",
   Unknown = "unknown",
 }
+
+
+export interface ResponseCharacterID {
+  id:       number;
+  name:     string;
+  status:   string;
+  species:  string;
+  type:     string;
+  gender:   string;
+  origin:   Location;
+  location: Location;
+  image:    string;
+  episode:  string[];
+  url:      string;
+  created:  Date;
+}
+
