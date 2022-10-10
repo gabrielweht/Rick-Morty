@@ -19,8 +19,18 @@
 
 .divInfo {
   display: block;
-  margin-top: -10px;
+  margin-top: 10px;
   color: white;
+}
+
+.nameCharacters {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nameCharacters:hover {
+  color: rgb(255, 102, 0);
 }
 
 .imageChar {
