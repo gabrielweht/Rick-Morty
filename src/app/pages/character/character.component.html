@@ -1,3 +1,18 @@
-
-<h1>{{ character.name }}</h1>
-<img [src]='character.image' alt="image">
+<div class="divContainer">
+  <h1 class="title">{{ character.name }}</h1>
+  <img [src]='character.image' alt="image" class="image">
+  <div class="divDates">
+    <span class="spansDates">Gender: {{character.gender}} ></span>
+    <span class="spansDates">Species: {{character.species}}</span>
+    <div class="divStatus">
+      <span class="spanStatus">Status: {{character.status}}</span>
+      <span [ngClass]="" class="status"></span>
+    </div>
+    <span class="spansDates">Origin: {{character.origin.name}}</span>
+    <span class="spansDates">Location: {{character.location.name}}</span>
+    <span class="spansDates">Episodes:</span>
+    <span *ngFor="let episode of character.episode, index as i">
+      <!-- <a [routerLink]="['/episode', i + 1]">Episode {{ i + 1 }}</a> -->
+    </span>
+  </div>
+</div>

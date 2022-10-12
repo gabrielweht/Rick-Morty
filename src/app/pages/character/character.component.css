@@ -1,0 +1,54 @@
+.divContainer {
+  color: #eceff1;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.divDates {
+  grid-row: 2/4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  grid-column: 1/4;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  grid-column: 1/4;
+  grid-row: 2/5;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 1rem;
+}
+
+.spansDates {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.spanStatus {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.divStatus {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.status {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+}

@@ -20,12 +20,12 @@
 .divInfo {
   display: block;
   margin-top: 10px;
-  color: white;
+  color: #eceff1;
 }
 
 .nameCharacters {
   font-size: 2rem;
-  color: white;
+  color: #eceff1;
   text-decoration: none;
 }
 
