@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { CharacterComponent } from './pages/character/character.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'personajes', pathMatch: 'full'},
@@ -17,7 +19,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     CharactersComponent,
-    CharacterComponent
+    CharacterComponent,
+    NavBarComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
