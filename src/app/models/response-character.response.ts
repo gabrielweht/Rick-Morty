@@ -15,7 +15,7 @@ export interface ResponseCharacters {
   name:     string;
   status:   Status;
   species:  Species;
-  type:     string;
+  type:     Type;
   gender:   Gender;
   origin:   Location;
   location: Location;
@@ -47,6 +47,12 @@ export enum Status {
   Unknown = "unknown",
 }
 
+enum Type {
+  Empty = "",
+  FishPerson = "Fish-Person",
+  HumanWithAntennae = "Human with antennae",
+  Robot = "Robot",
+}
 
 export interface ResponseCharacterID {
   id:       number;
@@ -62,4 +68,6 @@ export interface ResponseCharacterID {
   url:      string;
   created:  Date;
 }
+
+
 
