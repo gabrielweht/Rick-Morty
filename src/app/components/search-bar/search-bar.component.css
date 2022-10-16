@@ -32,3 +32,29 @@
 .btn:hover {
   cursor: pointer;
 }
+
+.options {
+  width: 23rem;
+  border-radius: 10px;
+  background-color: #eceff1;
+  position: fixed;
+  z-index: 100;
+  top: 5rem;
+  padding: 0 .3rem 0 .3rem;
+  transform: translate(-3rem, 0px);
+  border: 1px solid #263238;
+}
+
+.linkTo {
+  padding: .5rem 1rem .5rem 1rem;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.linkTo:hover {
+  cursor: pointer;
+}
+
+.spanName {
+  text-decoration: none;
+  color: #263238
+}
