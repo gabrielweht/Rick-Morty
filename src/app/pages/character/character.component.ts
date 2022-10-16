@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { CharactersService } from 'src/app/services/characters.service';
+import { CharactersService } from 'src/app/core/services/characters.service';
 
 @Component({
   selector: 'app-character',
