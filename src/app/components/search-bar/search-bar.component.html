@@ -1,6 +1,20 @@
 <div class="divSearchBar">
   <label for="" class="labelSearch">
-    <input type="text" placeholder="Buscar..." class="inputSearch">
-    <button class="btn">Buscar</button>
+    <input
+      type="text"
+      placeholder="Buscar..."
+      class="inputSearch"
+      (keyup)="search($event)"
+      [value]="value$"
+    >
+    <button class="btn" (click)="searchCharacters()">Buscar</button>
   </label>
+  <div class="options" *ngIf="names.length > 0" >
+    <div *ngFor="let charSearch of names; let i = index"
+      class="linkTo"
+      [routerLink]="['/personaje', charSearch.id ]"
+      (click)="goToCharacterId()">
+        <span  class="spanName" >{{charSearch.name}}</span>
+    </div>
+  </div>
 </div>
