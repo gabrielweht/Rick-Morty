@@ -9,7 +9,7 @@ import { CharactersComponent } from './pages/characters/characters.component';
 import { CharacterComponent } from './pages/character/character.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { PaginatedComponent } from './components/paginated/paginated.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'personajes', pathMatch: 'full'},
@@ -24,7 +24,7 @@ const routes: Routes = [
     CharacterComponent,
     NavBarComponent,
     SearchBarComponent,
-    PaginatedComponent
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

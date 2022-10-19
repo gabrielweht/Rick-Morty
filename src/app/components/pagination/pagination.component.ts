@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CharactersService } from 'src/app/core/services/characters.service';
 
 @Component({
-  selector: 'app-paginated',
-  templateUrl: './paginated.component.html',
-  styleUrls: ['./paginated.component.css']
+  selector: 'app-pagination',
+  templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.css']
 })
-export class PaginatedComponent implements OnInit {
+export class PaginationComponent implements OnInit {
 
   public quantityPages!: number;
   private nameToSearch!: string;
@@ -61,7 +61,7 @@ export class PaginatedComponent implements OnInit {
   }
 
   checkActive(value: any) {
-    if(value.value === this.actualPage) return true;
+    if(parseInt(value.value) === this.actualPage) return true;
     else return false
   }
 
