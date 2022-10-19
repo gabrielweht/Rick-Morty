@@ -8,11 +8,16 @@ import { ResponseCharacters, ResponseCharacterID } from '../../models/response-c
 export class CharactersService {
 
   characters$ = new EventEmitter();
+  quantityPages$ = new EventEmitter();
+  nameToSearch$ = new EventEmitter()
 
   constructor( private http: HttpClient ) {}
 
-  findCharacters () {
-    const url = "https://rickandmortyapi.com/api/character?count=100";
+  findCharacters (page: number, name: string) {
+    let url = `https://rickandmortyapi.com/api/character?page=${page}`
+    if(name !== '') {
+      url = `https://rickandmortyapi.com/api/character?page=${page}&name=${name}`;
+    }
     return this.http.get<ResponseCharacters>(url)
   }
 
@@ -21,8 +26,4 @@ export class CharactersService {
     return this.http.get<ResponseCharacterID>(url)
   }
 
-  searchCharacter (name: string) {
-    const url = "https://rickandmortyapi.com/api/character?name="
-    return this.http.get<ResponseCharacters>(url + name)
-  }
 }

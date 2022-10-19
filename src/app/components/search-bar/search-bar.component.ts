@@ -23,7 +23,7 @@ export class SearchBarComponent implements OnInit {
 
     this.value$ = event.target.value
 
-    this.searchComponent.searchCharacter(event.target.value.trim()).subscribe(results => {
+    this.searchComponent.findCharacters(1, event.target.value.trim()).subscribe(results => {
       if(event.target.value === '') this.names = []
       else this.names = results.results.slice(0, 10).map( char => {
         return {
@@ -31,7 +31,7 @@ export class SearchBarComponent implements OnInit {
           id: char.id
         }
       });
-      this.responses = results.results
+      this.responses = results
     })
 
   }
@@ -42,7 +42,9 @@ export class SearchBarComponent implements OnInit {
   }
 
   searchCharacters(){
-    this.searchComponent.characters$.emit(this.responses)
+    this.searchComponent.characters$.emit(this.responses.results)
+    this.searchComponent.quantityPages$.emit(this.responses.info.pages)
+    this.searchComponent.nameToSearch$.emit(this.value$)
     this.names = []
     this.value$ = ''
   }
