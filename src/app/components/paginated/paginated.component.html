@@ -1,0 +1,55 @@
+<div class="divButtons">
+  <button (click)="handlePrev($event)" class="btns">
+    << </button>
+      <button value=1 #valuebtn (click)="handleClick(valuebtn, $event)"
+        [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}">
+        1
+      </button>
+      <button *ngIf="actualPage <= 3; else elseBlock"
+        [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}" value=2 #valuebtn
+        (click)="handleClick(valuebtn, $event)">
+        2
+      </button>
+
+      <button *ngIf="actualPage === 3" [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}"
+        [value]="actualPage" #valuebtn (click)="handleClick(valuebtn, $event)">
+        {{ actualPage }}
+      </button>
+
+      <button *ngIf="actualPage > 3 && actualPage < quantityPages - 2"
+        [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}" [value]="actualPage - 1"
+        #valuebtn (click)="handleClick(valuebtn, $event)">
+        {{ actualPage - 1 }}
+      </button>
+
+      <button *ngIf="actualPage > 3 && actualPage < quantityPages - 2"
+        [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}" [value]="actualPage" #valuebtn
+        (click)="handleClick(valuebtn, $event)">
+        {{ actualPage }}
+      </button>
+
+      <button *ngIf="actualPage === quantityPages - 2"
+        [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}" #valuebtn
+        (click)="handleClick(valuebtn, $event)" [value]="actualPage">
+        {{ actualPage }}
+      </button>
+
+      <button *ngIf="actualPage >= quantityPages - 2  ; else elseBlock"
+        [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}" #valuebtn
+        (click)="handleClick(valuebtn, $event)" [value]="quantityPages - 1">
+        {{ quantityPages - 1 }}
+      </button>
+
+      <button [value]="quantityPages"
+        [ngClass]="{'btns': !checkActive(valuebtnQP), 'isActive': checkActive(valuebtnQP)}" #valuebtnQP
+        (click)="handleClick(valuebtnQP, $event)">
+        {{ quantityPages }}
+      </button>
+      <button (click)="handleNext($event)" class="btns"> >> </button>
+
+      <ng-template #elseBlock>
+        <span class="span">
+          ...
+        </span>
+      </ng-template>
+</div>
