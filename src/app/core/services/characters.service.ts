@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { ResponseCharacters, ResponseCharacterID } from '../../models/response-character.response';
+import { ResponseCharacters, ResponseCharacterID, ResponseEpisodes } from '../../models/response-character.response';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,10 @@ export class CharactersService {
   findOneCharacter (id: number) {
     const url = `https://rickandmortyapi.com/api/character/${id}`
     return this.http.get<ResponseCharacterID>(url)
+  }
+
+  findEpisodes(url: string) {
+    return this.http.get<ResponseEpisodes>(url)
   }
 
 }
