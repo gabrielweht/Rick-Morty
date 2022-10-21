@@ -47,3 +47,27 @@
   margin-right: .25rem;
   margin-left: .25rem;
 }
+
+.btnPN {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  color: #eceff1;
+  background-color: #263238;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: .25rem;
+  margin-left: .25rem;
+}
+
+.btnPN:hover{
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
