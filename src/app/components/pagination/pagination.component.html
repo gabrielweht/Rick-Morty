@@ -1,6 +1,9 @@
 <div class="divButtons">
-  <button (click)="handlePrev($event)" class="btns">
-    << </button>
+  <button (click)="handlePrev($event)" class="btnPN">
+    <mat-icon class="icon">
+      keyboard_double_arrow_left
+      </mat-icon>
+  </button>
       <button value=1 #valuebtn (click)="handleClick(valuebtn, $event)"
         [ngClass]="{'btns': !checkActive(valuebtn), 'isActive': checkActive(valuebtn)}">
         1
@@ -45,7 +48,9 @@
         (click)="handleClick(valuebtnQP, $event)">
         {{ quantityPages }}
       </button>
-      <button (click)="handleNext($event)" class="btns"> >> </button>
+      <button (click)="handleNext($event)" class="btnPN">
+        <mat-icon class="icon">keyboard_double_arrow_right</mat-icon>
+      </button>
 
       <ng-template #elseBlock>
         <span class="span">
