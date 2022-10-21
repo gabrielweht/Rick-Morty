@@ -1,4 +1,9 @@
 <div class="divContainer">
+  <a href="/personajes" class="back">
+    <mat-icon class="iconBack">arrow_back_ios_new</mat-icon>
+    Volver
+  </a>
+
   <h1 class="title">{{ character?.name }}</h1>
   <img [src]='character.image' alt="image" class="image">
   <div class="divDates">
@@ -10,9 +15,24 @@
     </div>
     <span class="spansDates">Origin: {{character.origin?.name}}</span>
     <span class="spansDates">Location: {{character.location?.name}}</span>
-    <span class="spansDates">Episodes:</span>
-    <span *ngFor="let episode of character.episode, index as i">
-      <!-- <a [routerLink]="['/episode', i + 1]">Episode {{ i + 1 }}</a> -->
-    </span>
+  </div>
+  <div class="divTable">
+    <span class="spansDates">Episodios</span>
+    <table class="table">
+      <thead>
+        <tr>
+          <td class="componentTable">NOMBRE</td>
+          <td class="componentTable">ESTRENO</td>
+          <td class="componentTable">CODIGO</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let episode of episodes, index as i" [ngClass]="i % 2 === 0 ? 'filaPar' : 'filaImpar'">
+          <td class="componentTable">{{episode.name}}</td>
+          <td class="componentTable">{{episode.air_date}}</td>
+          <td class="componentTable">{{episode.episode}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
