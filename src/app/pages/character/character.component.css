@@ -2,7 +2,7 @@
   color: #eceff1;
   display: grid;
   grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto
 }
 
 .divDates {
@@ -13,8 +13,34 @@
   justify-content: space-between;
 }
 
+.back {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 2rem;
+  width: 5rem;
+  background-color:#eceff1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #263238;
+  border-radius: 10px;
+  margin: 1rem 0 0 1rem;
+  padding: 0 .5rem 0 0;
+  font-size: 1em;
+  z-index: 100;
+}
+
+.iconBack {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .title {
-  grid-column: 1/4;
+  grid-column: 1/8;
+  grid-row: 1/2;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -23,11 +49,11 @@
 
 .image {
   grid-column: 1/4;
-  grid-row: 2/5;
+  grid-row: 2/3;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 15rem;
   border-radius: 1rem;
 }
 
@@ -51,4 +77,31 @@
   width: .5rem;
   height: .5rem;
   border-radius: 50%;
+}
+
+.divTable {
+  grid-row-start: 4;
+  grid-column: 1/6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eceff1;
+  color:#263238;
+}
+
+.table {
+  width: 90%;
+}
+
+.filaPar {
+  background-color: rgb(186, 189, 190, 0.4);
+  height: 3rem;
+}
+
+.filaImpar {
+  height: 3rem;
+}
+
+.componentTable {
+  padding: 1rem;
 }

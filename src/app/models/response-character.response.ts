@@ -69,5 +69,14 @@ export interface ResponseCharacterID {
   created:  Date;
 }
 
+export interface ResponseEpisodes {
+  id:         number;
+  name:       string;
+  air_date:   string;
+  episode:    string;
+  characters: string[];
+  url:        string;
+  created:    Date;
+}
 
 

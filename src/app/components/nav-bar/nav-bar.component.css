@@ -28,3 +28,9 @@
   color: #263238;
   margin-right: 1rem;
 }
+
+.imgLogo {
+  filter: brightness(1.2);
+  mix-blend-mode: multiply;
+  width: 12rem;
+}
