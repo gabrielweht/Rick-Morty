@@ -3,8 +3,12 @@
     <div *ngFor="let character of characters" class='divCharacter'>
       <img [src]='character.image' alt="character" class="imageChar">
       <div class="divInfo">
-        <a [routerLink]="['/personaje', character.id ]" class="nameCharacters">{{ character.name }}</a>
-        <p>{{ character.status }} - {{ character.species }}</p>
+
+      <a [routerLink]="['/personaje', character.id ]" class="nameCharacters">{{ character.name }}</a>
+      <div class="divStatus">
+        <span [ngClass]="character?.status === 'Alive' ? 'statusAlive' : character?.status === 'Dead' ? 'statusDead' : 'unknown'"></span>
+        <p class="species">{{ character.species }}</p>
+      </div>
 
         <h4>Location:</h4>
         <p>{{ character.location.name }}</p>

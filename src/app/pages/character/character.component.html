@@ -1,38 +1,45 @@
-<div class="divContainer">
-  <a href="/personajes" class="back">
-    <mat-icon class="iconBack">arrow_back_ios_new</mat-icon>
-    Volver
-  </a>
-
-  <h1 class="title">{{ character?.name }}</h1>
-  <img [src]='character.image' alt="image" class="image">
-  <div class="divDates">
-    <span class="spansDates">Gender: {{character?.gender}} </span>
-    <span class="spansDates">Species: {{character?.species}}</span>
-    <div class="divStatus">
-      <span class="spanStatus">Status: {{character?.status}}</span>
-      <span [ngClass]="" class="status"></span>
+<div class="divGeneral">
+  <div class="divContainer">
+    <a href="/personajes" class="back">
+      <mat-icon class="iconBack">arrow_back_ios_new</mat-icon>
+      Volver
+    </a>
+    <img src="https://play-lh.googleusercontent.com/soESSvjNndWqychCDm3l48NzqPhf2fnY6VvOsZ9dvM5fDlp7nYfewgzNDWAem7yZuC8=h500"
+      alt="wpp"
+      class="imgW"
+      >
+    <div class="statusAndImageDiv">
+      <img [src]='character.image' alt="image" class="image">
+      <span [ngClass]="character?.status === 'Alive' ? 'statusAlive' : character?.status === 'Dead' ? 'statusDead' : 'unknown'"></span>
     </div>
-    <span class="spansDates">Origin: {{character.origin?.name}}</span>
-    <span class="spansDates">Location: {{character.location?.name}}</span>
-  </div>
-  <div class="divTable">
-    <span class="spansDates">Episodios</span>
-    <table class="table">
-      <thead>
-        <tr>
-          <td class="componentTable">NOMBRE</td>
-          <td class="componentTable">ESTRENO</td>
-          <td class="componentTable">CODIGO</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let episode of episodes, index as i" [ngClass]="i % 2 === 0 ? 'filaPar' : 'filaImpar'">
-          <td class="componentTable">{{episode.name}}</td>
-          <td class="componentTable">{{episode.air_date}}</td>
-          <td class="componentTable">{{episode.episode}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="divDates">
+      <div class="divTitle">
+        <h1 class="title">{{ character?.name }}</h1>
+        <span class="spansDates">{{character?.gender}} - {{character?.species}}</span>
+      </div>
+      <div class="divOriginLocation">
+        <span class="spansDates">Origin: {{character.origin?.name}}</span>
+        <span class="spansDates">Location: {{character.location?.name}}</span>
+      </div>
+    </div>
+    <div class="divTable">
+      <span class="spanEpisode">Episodes</span>
+      <table class="table">
+        <thead>
+          <tr class="theadBgr">
+            <td class="componentTable">NAME</td>
+            <td class="componentTable">AIR DATE</td>
+            <td class="componentTable">CODE</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let episode of episodes, index as i" [ngClass]="i % 2 === 0 ? 'filaPar' : 'filaImpar'">
+            <td class="componentTable">{{episode.name}}</td>
+            <td class="componentTable">{{episode.air_date}}</td>
+            <td class="componentTable">{{episode.episode}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
