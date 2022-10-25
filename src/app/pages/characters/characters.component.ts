@@ -10,8 +10,9 @@ export class CharactersComponent implements OnInit, OnDestroy{
 
   public characters: any = [];
   private nameToSearch!: string;
+  private charToEmit: any = []
 
-  constructor( private characterService: CharactersService) { }
+  constructor( private characterService: CharactersService) {}
 
 
 
@@ -28,11 +29,24 @@ export class CharactersComponent implements OnInit, OnDestroy{
     else {
       this.characterService.findCharacters(1, this.nameToSearch || '')
       .subscribe( (resp) => {
-        this.characterService.characters$.emit(resp.results);
+        resp.results.map( res => {
+            this.characterService.findEpisodes(res.episode[0]).subscribe( (resp) => {
+              this.charToEmit.push({
+                ...res,
+                firstEpisode: resp.name
+            })
+          })
+
+        }
+        )
+        this.characterService.characters$.emit(this.charToEmit);
         this.characterService.quantityPages$.emit(resp.info.pages)
       })
 
-      this.characterService.characters$.subscribe( response => this.characters = response)
+
+      this.characterService.characters$.subscribe( response => {
+        this.characters = response
+      })
     }
 
 
