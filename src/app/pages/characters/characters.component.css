@@ -11,7 +11,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 8rem;
 }
 
 .divCharacter {
@@ -80,4 +79,21 @@
   height: .8rem;
   border-radius: 50%;
   background-color: orange;
+}
+
+.divLocation {
+  display: flex;
+  align-items: center;
+}
+
+.locationTitle {
+  margin: .5rem 0 1rem 0;
+}
+
+.location {
+  margin: .5rem 0 1rem  1rem;
+}
+
+.episode {
+  margin: .5rem 0 .5rem 0;
 }
