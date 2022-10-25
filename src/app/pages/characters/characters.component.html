@@ -4,14 +4,20 @@
       <img [src]='character.image' alt="character" class="imageChar">
       <div class="divInfo">
 
-      <a [routerLink]="['/personaje', character.id ]" class="nameCharacters">{{ character.name }}</a>
-      <div class="divStatus">
-        <span [ngClass]="character?.status === 'Alive' ? 'statusAlive' : character?.status === 'Dead' ? 'statusDead' : 'unknown'"></span>
-        <p class="species">{{ character.species }}</p>
-      </div>
-
-        <h4>Location:</h4>
-        <p>{{ character.location.name }}</p>
+        <a [routerLink]="['/personaje', character.id ]" class="nameCharacters">{{ character.name }}</a>
+        <div class="divStatus">
+          <span
+            [ngClass]="character?.status === 'Alive' ? 'statusAlive' : character?.status === 'Dead' ? 'statusDead' : 'unknown'"></span>
+          <p class="species">{{ character.status }} - {{ character.species }}</p>
+        </div>
+        <div class="divLocation">
+          <h4 class="locationTitle">Location:</h4>
+          <p class="location">{{ character.location.name }}</p>
+        </div>
+        <div class="divEpisode">
+          <h4 class="episode">First seen in:</h4>
+          <p class="episode">{{character.firstEpisode}}</p>
+        </div>
       </div>
     </div>
   </div>

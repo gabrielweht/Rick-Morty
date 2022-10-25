@@ -1,0 +1,58 @@
+.footerContainer {
+  background-color: #455a64;
+  border-top: 2px solid #eceff1;
+  color: #eceff1;
+}
+
+.firstContainer{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.firsth1 {
+  color: #eceff1;
+}
+
+.secondh1 {
+  color: #000a12;
+}
+
+.btnRepo {
+  padding: 1rem;
+  color: #eceff1;
+  background-color: #263238;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btnRepo:hover {
+  cursor: pointer;
+}
+
+.secondContainer {
+  background-color: #263238;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem 2rem 3rem;;
+}
+
+.divCredits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconPC {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+
+.icon {
+  width: 2.5rem;
+}

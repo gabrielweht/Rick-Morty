@@ -12,10 +12,11 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'personajes', pathMatch: 'full'},
-  { path: 'personajes', component: CharactersComponent },
+  { path: 'personajes', component: CharactersComponent,  pathMatch: 'full'},
   { path: 'personaje/:id', component: CharacterComponent }
 ]
 
@@ -26,7 +27,8 @@ const routes: Routes = [
     CharacterComponent,
     NavBarComponent,
     SearchBarComponent,
-    PaginationComponent
+    PaginationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
