@@ -19,4 +19,10 @@ export class NavBarComponent implements OnInit {
     this.renderer2.removeClass(asMenu, "elementsRight")
   }
 
+  desactiveMenu() {
+    const asMenu = this.menu.nativeElement
+    this.renderer2.addClass(asMenu, "elementsRight")
+    this.renderer2.removeClass(asMenu, "menuActive")
+  }
+
 }

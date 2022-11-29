@@ -26,12 +26,11 @@
 }
 
 .elementsRight {
-  grid-column: 2/3;
+  grid-column: 2/4;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-right: 5rem;
 }
 
 .links{
@@ -68,11 +67,19 @@
   right: 0;
   top: 0;
   padding: 2rem;
-  width: 80%;
+  width: 70%;
   transition: all 2s;
 }
 
+.menuActiveDivInt{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 90%;
+}
+
 .btnClose {
+  cursor: pointer;
   border: none;
   display: none;
 }
@@ -100,6 +107,7 @@
   }
 
   .btnMenu {
+    cursor: pointer;
     display: inline;
   }
 
@@ -110,5 +118,13 @@
   .title {
     margin-left: 2rem;
     margin-right: 0;
+  }
+
+  .menuActiveDivInt {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }

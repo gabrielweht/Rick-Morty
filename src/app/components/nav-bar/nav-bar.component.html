@@ -3,13 +3,15 @@
     <img src="https://www.dlf.pt/dfpng/middlepng/35-350447_rick-et-morty-logo-hd-png-download.png" alt="logo" class="imgLogo">
   </a>
   <div class="elementsRight" #asMenu>
-    <button class="btnClose">
-      <img src="https://img.icons8.com/ios/344/delete-sign--v1.png" alt="close" class="imgClose">
-    </button>
-    <app-search-bar></app-search-bar>
-    <div class="firstDiv">
-      <a href="/contacto" class="links">Contacto</a>
-      <a href="/about" class="links">About</a>
+    <div class="menuActiveDivInt">
+      <button class="btnClose" (click)="desactiveMenu()">
+        <img src="https://img.icons8.com/ios/344/delete-sign--v1.png" alt="close" class="imgClose">
+      </button>
+      <app-search-bar></app-search-bar>
+      <div class="firstDiv">
+        <a href="/contacto" class="links">Contacto</a>
+        <a href="/about" class="links">About</a>
+      </div>
     </div>
   </div>
   <button class="btnMenu" (click)="activeMenu()">
